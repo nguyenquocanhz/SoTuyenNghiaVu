@@ -55,6 +55,8 @@ npx expo prebuild --platform android
 npm run apk
 ```
 
+`npm run apk` đóng gói mã máy cho `arm64-v8a` và `armeabi-v7a`; muốn chạy trên máy ảo x86 thì bỏ tham số `-PreactNativeArchitectures` trong script.
+
 APK nằm ở `android/app/build/outputs/apk/release/app-release.apk`. Bản này ký bằng debug keystore — chỉ để thử, không để phân phối.
 
 ## 4. Bố cục mã nguồn

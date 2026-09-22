@@ -37,7 +37,7 @@
     "test": "jest",
     "typecheck": "tsc --noEmit",
     "lint": "expo lint",
-    "apk": "cd android && gradlew.bat assembleRelease"
+    "apk": "cd android && gradlew.bat assembleRelease -PreactNativeArchitectures=armeabi-v7a,arm64-v8a"
   },
   "dependencies": {
     "@react-native-vector-icons/material-design-icons": "^13.1.4",
