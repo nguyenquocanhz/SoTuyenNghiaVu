@@ -1,0 +1,8 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Lỗ hổng bảo mật / Security vulnerability
+    url: https://github.com/nguyenquocanhz/SoTuyenNghiaVu/security/advisories/new
+    about: Báo riêng tư qua GitHub Security Advisory. Đừng mở issue công khai cho lỗ hổng bảo mật.
+  - name: Hỏi đáp, góp ý tính năng / Questions and ideas
+    url: https://github.com/nguyenquocanhz/SoTuyenNghiaVu/discussions
+    about: Đặt câu hỏi về cách dùng hoặc đề xuất tính năng ở Discussions.

@@ -1,0 +1,44 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  check:
+    name: Typecheck and unit tests
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out the repository
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js 20
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      # TypeScript strict. The Expo-generated files (.expo/types, expo-env.d.ts) are
+      # git-ignored and absent here; the project type-checks without them.
+      - name: Type-check
+        run: npx tsc --noEmit
+
+      - name: Unit tests
+        run: npx jest --ci
+
+# Note: no Android build job on purpose. Building the APK needs the Android SDK and a
+# prebuild step; the maintainer runs `npm run apk` and installs the result on a real
+# phone, because NFC (CCCD chip) and Bluetooth LE (weight scale) cannot be exercised
+# on CI runners.

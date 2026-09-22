@@ -1,0 +1,56 @@
+name: Sai lệch so với thông tư / Wrong standard
+description: Điểm, danh mục bệnh, bố cục biểu mẫu trong ứng dụng khác với Thông tư 105/2023/TT-BQP hoặc 106/2025/TT-BQP
+labels: ['standards']
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Dữ liệu tiêu chuẩn được chép tay từ bản scan của hai thông tư, nên vẫn có thể sai. Báo cáo càng cụ thể càng sửa nhanh. **Đừng dán hồ sơ thật của công dân.**
+  - type: dropdown
+    id: where
+    attributes:
+      label: Nằm ở đâu
+      options:
+        - Mục I Phụ lục I – thể lực (chiều cao, cân nặng, vòng ngực, BMI)
+        - Mục II Phụ lục I – bệnh tật (207 mục)
+        - Mục III Phụ lục I – bệnh miễn đăng ký NVQS
+        - Mục IV Phụ lục I – chỉ dẫn khám (quy tròn, thị lực, huyết áp, mạch)
+        - Điều 4, 6 – phân loại sức khỏe
+        - Mẫu 2 – Phiếu sơ tuyển
+        - Mẫu 2a – Báo cáo kết quả
+        - Mẫu 2k – Sổ thống kê
+        - Khác
+    validations:
+      required: true
+  - type: input
+    id: item
+    attributes:
+      label: Mục, số thứ tự, dòng cụ thể
+      placeholder: 'Mục II, số 78 – Tật khúc xạ'
+    validations:
+      required: true
+  - type: textarea
+    id: app
+    attributes:
+      label: Ứng dụng đang hiển thị / tính như thế nào
+    validations:
+      required: true
+  - type: textarea
+    id: circular
+    attributes:
+      label: Thông tư viết như thế nào
+      description: Chép nguyên văn dòng trong thông tư.
+    validations:
+      required: true
+  - type: input
+    id: source
+    attributes:
+      label: Căn cứ
+      placeholder: 'Thông tư 106/2025/TT-BQP, Phụ lục I, Mục II, trang 12'
+    validations:
+      required: true
+  - type: textarea
+    id: impact
+    attributes:
+      label: Ảnh hưởng
+      description: Sai này làm lệch điểm/kết luận ra sao? Đã ảnh hưởng tới phiếu đã in chưa?

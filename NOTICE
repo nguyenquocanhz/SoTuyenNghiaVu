@@ -1,0 +1,155 @@
+SoTuyenNghiaVu (Sơ tuyển NVQS điện tử)
+Copyright 2026 nguyenquocanhz
+
+This product is licensed under the Apache License, Version 2.0 (the "License").
+You may not use this product except in compliance with the License. A copy of
+the License is distributed with this product in the file LICENSE and is also
+available at http://www.apache.org/licenses/LICENSE-2.0
+
+--------------------------------------------------------------------------------
+1. THIRD-PARTY COMPONENTS — JAVASCRIPT / TYPESCRIPT (npm)
+--------------------------------------------------------------------------------
+
+The application links against the npm packages below. They are NOT redistributed
+in this repository (`node_modules/` is git-ignored); they are downloaded by
+`npm ci` and bundled into release builds. Each package keeps its own licence;
+the licence shown here was read from that package's `package.json` at version
+1.0.0 of this project.
+
+  Component                                          Version    Licence
+  -------------------------------------------------  ---------  -----------------
+  expo                                               57.0.23    MIT
+  expo-router                                        57.0.21    MIT
+  expo-sqlite                                        57.0.3     MIT
+  expo-print                                         57.0.2     MIT
+  expo-sharing                                       57.0.20    MIT
+  expo-file-system                                   57.0.7     MIT
+  expo-document-picker                               57.0.2     MIT
+  expo-font / expo-haptics / expo-linking            57.0.x     MIT
+  expo-constants / expo-status-bar / expo-system-ui  57.0.x     MIT
+  expo-splash-screen / expo-build-properties         57.0.x     MIT
+  react                                              19.2.3     MIT
+  react-dom                                          19.2.3     MIT
+  react-native                                       0.86.3     MIT
+  react-native-ble-plx                               3.5.1      see note (a)
+  react-native-gesture-handler                       2.32.0     MIT
+  react-native-reanimated                            4.5.1      MIT
+  react-native-safe-area-context                     5.7.0      MIT
+  react-native-screens                               4.26.2     MIT
+  react-native-svg                                   15.15.4    MIT
+  react-native-web                                   0.21.2     MIT
+  react-native-worklets                              0.10.1     MIT
+  @react-native-vector-icons/material-design-icons   13.1.4     MIT, note (b)
+  zustand                                            5.0.15     MIT
+  @fontsource/tinos (build only)                     5.3.0      OFL-1.1, note (c)
+  typescript (build only)                            6.0.3      Apache-2.0
+  jest / jest-expo (build only)                      29.7.0 /   MIT
+                                                     57.0.5
+
+  (a) react-native-ble-plx 3.5.1 ships an Apache License 2.0 text in its
+      LICENSE file ("Copyright 2016 Polidea", "Copyright 2021 intent
+      sp. z o.o."), while the license field of its package.json says "MIT".
+      Both statements come from upstream; this project reproduces the upstream
+      attribution and makes no claim about which one governs.
+
+  (b) The @react-native-vector-icons/material-design-icons package is MIT
+      (Copyright (c) 2015 Joel Arvidsson). The Material Design Icons webfont it
+      bundles originates from the Pictogrammers project and carries that
+      project's own licence terms; consult that project before redistributing
+      the font on its own.
+
+  (c) See section 3 — unlike every other package listed here, a subset of this
+      font IS redistributed inside this repository.
+
+--------------------------------------------------------------------------------
+2. THIRD-PARTY COMPONENTS — ANDROID NATIVE (modules/cccd-nfc, Gradle)
+--------------------------------------------------------------------------------
+
+The local Expo module `modules/cccd-nfc` (reading the chip of a Vietnamese CCCD
+citizen ID over NFC) depends on the artifacts below. They are NOT redistributed
+in this repository; Gradle downloads them at build time and links them into the
+APK. Versions and exclusions are declared in
+`modules/cccd-nfc/android/build.gradle`.
+
+  Artifact                                    Version   Licence
+  ------------------------------------------  --------  ------------------------
+  org.jmrtd:jmrtd                             0.7.35    GNU LGPL
+  net.sf.scuba:scuba-sc-android               0.0.24    GNU LGPL
+  net.sf.scuba:scuba-smartcards (transitive)  0.0.20    GNU LGPL
+  org.ejbca.cvc:cert-cvc (transitive)         1.4.13    GNU LGPL 2.1
+  org.bouncycastle:bcprov-jdk18on             1.78      Bouncy Castle Licence
+                                                        (MIT-style)
+  org.bouncycastle:bcutil-jdk18on             1.78      Bouncy Castle Licence
+                                                        (MIT-style)
+
+  LGPL note: JMRTD, SCUBA and cert-cvc are used as unmodified library
+  dependencies. No source code from those projects has been copied into this
+  repository, and the Kotlin code in `modules/cccd-nfc` only calls their public
+  APIs. Anyone who distributes a compiled build (APK/AAB) that contains these
+  libraries is responsible for meeting the LGPL obligations that come with it,
+  including carrying this notice and allowing the LGPL libraries to be replaced
+  by a modified version.
+
+--------------------------------------------------------------------------------
+3. EMBEDDED FONT — TINOS (REDISTRIBUTED IN THIS REPOSITORY)
+--------------------------------------------------------------------------------
+
+`src/reports/fonts.ts` contains base64-encoded WOFF2 subsets (latin, latin-ext,
+vietnamese) of the Tinos font, generated from the npm package
+`@fontsource/tinos` 5.3.0 by `scripts/gen-print-fonts.mjs`. The printed forms
+(Phiếu sơ tuyển Mẫu 2, Mẫu 2a, Mẫu 2k) embed the font so that Vietnamese
+diacritics and the A4 layout render the same way on every phone.
+
+  Tinos — Copyright The Tinos Project Authors
+  (https://github.com/googlefonts/tinos), a metric-compatible serif designed by
+  Steve Matteson, licensed under the SIL Open Font License, Version 1.1.
+  The full licence text is included at `third_party/tinos/LICENSE`.
+
+  Under the OFL the font may be bundled and redistributed with software, but it
+  must keep this notice and the licence text, must not be sold by itself, and
+  must not be redistributed under a Reserved Font Name. Regenerate the subsets
+  with `node scripts/gen-print-fonts.mjs` rather than editing `fonts.ts` by hand.
+
+--------------------------------------------------------------------------------
+4. LEGAL TEXTS AND OFFICIAL DATA TRANSCRIBED INTO THIS REPOSITORY
+--------------------------------------------------------------------------------
+
+  * Thông tư 105/2023/TT-BQP ngày 06/12/2023 của Bộ Quốc phòng and
+    Thông tư 106/2025/TT-BQP ngày 30/9/2025 (sửa đổi, bổ sung Thông tư
+    105/2023/TT-BQP). The tables of Phụ lục I (Mục I thể lực, Mục II bệnh tật,
+    Mục III bệnh miễn đăng ký NVQS, Mục IV chỉ dẫn khám) and the forms of
+    Phụ lục I Mẫu 2, Phụ lục II Mẫu 2a and Mẫu 2k are transcribed into
+    `src/standards/` and `src/reports/`.
+
+    Theo khoản 2 Điều 15 Luật Sở hữu trí tuệ, văn bản quy phạm pháp luật không
+    thuộc phạm vi bảo hộ quyền tác giả. / Under Article 15(2) of the Vietnamese
+    Law on Intellectual Property, legislative documents are not subject to
+    copyright protection.
+
+    The transcription was made from scanned PDFs page by page and re-checked
+    against the page images, but it is NOT an official publication. In case of
+    any difference, the text published by Bộ Quốc phòng prevails. Please report
+    a transcription error as an issue.
+
+  * Danh mục đơn vị hành chính (34 tỉnh, thành phố; 3.321 xã, phường, đặc khu)
+    in `src/standards/adminUnits.ts` comes from the web service of Cục Thống kê
+    (https://danhmuchanhchinh.nso.gov.vn/DMDVHC.asmx), which publishes the units
+    established by Quyết định 19/2025/QĐ-TTg. State statistical data, reproduced
+    with the source recorded in `ADMIN_UNITS_SOURCE`.
+
+--------------------------------------------------------------------------------
+5. DISCLAIMER / TUYÊN BỐ MIỄN TRỪ
+--------------------------------------------------------------------------------
+
+Ứng dụng chỉ hỗ trợ Tổ sơ tuyển sức khỏe của Trạm y tế cấp xã ghi chép, tính
+điểm và in biểu mẫu. Điểm, phân loại và kết luận là GỢI Ý; người khám và Tổ
+trưởng tổ sơ tuyển chịu trách nhiệm về nội dung phiếu. Phân loại sức khỏe chính
+thức do Hội đồng khám sức khỏe nghĩa vụ quân sự khu vực thực hiện (Điều 8, 9
+Thông tư 105/2023/TT-BQP). Đây không phải thiết bị y tế và chưa được cơ quan
+quản lý nào đánh giá hay cấp phép.
+
+This app helps a commune health station record, score and print the statutory
+forms. Scores and conclusions are SUGGESTIONS; the examiner and the screening
+team leader remain responsible for what the form says, and the official health
+classification is made by the regional military-service medical board. It is not
+a medical device and has been approved by no regulator.

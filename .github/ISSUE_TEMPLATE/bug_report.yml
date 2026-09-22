@@ -1,0 +1,61 @@
+name: Lỗi ứng dụng / Bug report
+description: Ứng dụng chạy sai, sập, in sai bố cục, không lưu được dữ liệu…
+labels: ['bug']
+body:
+  - type: markdown
+    attributes:
+      value: |
+        **Đừng dán dữ liệu thật của công dân** (họ tên, số CCCD, ngày sinh, phiếu đã in). Hãy che hoặc thay bằng dữ liệu giả trước khi gửi.
+
+        Nếu là **lỗ hổng bảo mật**, đừng mở issue — báo riêng tư tại [Security advisory](https://github.com/nguyenquocanhz/SoTuyenNghiaVu/security/advisories/new).
+  - type: textarea
+    id: what
+    attributes:
+      label: Chuyện gì xảy ra
+      description: Mô tả ngắn gọn lỗi và điều bạn mong đợi thay vào đó.
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: Các bước tái hiện
+      placeholder: |
+        1. Mở màn hình …
+        2. Nhập …
+        3. Bấm …
+        4. Kết quả: …
+    validations:
+      required: true
+  - type: dropdown
+    id: area
+    attributes:
+      label: Khu vực
+      options:
+        - Phiếu sơ tuyển (nhập liệu, tính điểm)
+        - In / xuất PDF, CSV
+        - Danh mục bệnh tật, bệnh miễn đăng ký
+        - Đợt sơ tuyển, danh sách công dân
+        - Sao lưu, gộp dữ liệu, nhập từ liên kết
+        - Đọc chip CCCD (NFC)
+        - Cân Bluetooth
+        - Cài đặt, chọn trạm y tế
+        - Khác
+    validations:
+      required: true
+  - type: input
+    id: device
+    attributes:
+      label: Thiết bị và phiên bản Android
+      placeholder: 'Samsung Galaxy A24, Android 14'
+    validations:
+      required: true
+  - type: input
+    id: version
+    attributes:
+      label: Phiên bản ứng dụng hoặc commit
+      placeholder: 'v1.0.0 (APK) hoặc commit abc1234'
+  - type: textarea
+    id: extra
+    attributes:
+      label: Ảnh chụp màn hình, log (đã che dữ liệu thật)
+      description: Kéo thả ảnh vào đây. Log lấy bằng `adb logcat`.
