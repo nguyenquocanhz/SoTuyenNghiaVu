@@ -1,6 +1,6 @@
 {
   "name": "sotuyennghiavu",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "private": true,
   "description": "Android app for Vietnamese commune health stations (Trạm y tế cấp xã) running the military-service health pre-screening (sơ tuyển) of Thông tư 105/2023/TT-BQP and Thông tư 106/2025/TT-BQP: scoring, statutory forms Mẫu 2, 2a and 2k as A4 PDFs, CCCD chip reading over NFC and Bluetooth LE weight scales. Offline, no network calls.",
   "keywords": [

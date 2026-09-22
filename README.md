@@ -141,6 +141,8 @@ cd android && gradlew.bat assembleRelease
 adb install -r app/build/outputs/apk/release/app-release.apk
 ```
 
+Bộ icon trong `assets/images/` sinh bằng `python scripts/gen-app-icon.py` (cần Pillow): hình phiếu sơ tuyển kèm đường nhịp tim trên nền xanh `#2D5F3A` của giao diện, gồm icon iOS, ba lớp adaptive icon của Android (nền, lớp trước, monochrome cho theme icon), ảnh splash và favicon. Sửa hình thì sửa script rồi chạy lại, đừng sửa tay từng tệp PNG.
+
 Yêu cầu: Node 20+, JDK 17+, Android SDK. Ứng dụng dùng native module (NFC, Bluetooth, SQLite) nên không chạy trong Expo Go. Bản release hiện ký bằng debug keystore của template – cần tạo keystore riêng trước khi phát hành.
 
 ## 9. Cài đặt bản APK
