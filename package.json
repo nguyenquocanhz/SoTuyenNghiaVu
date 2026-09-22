@@ -1,0 +1,88 @@
+{
+  "name": "sotuyennghiavu",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Android app for Vietnamese commune health stations (Trạm y tế cấp xã) running the military-service health pre-screening (sơ tuyển) of Thông tư 105/2023/TT-BQP and Thông tư 106/2025/TT-BQP: scoring, statutory forms Mẫu 2, 2a and 2k as A4 PDFs, CCCD chip reading over NFC and Bluetooth LE weight scales. Offline, no network calls.",
+  "keywords": [
+    "react-native",
+    "expo",
+    "vietnam",
+    "nghia-vu-quan-su",
+    "so-tuyen-suc-khoe",
+    "thong-tu-105-2023-tt-bqp",
+    "thong-tu-106-2025-tt-bqp",
+    "tram-y-te",
+    "health-screening",
+    "nfc",
+    "cccd",
+    "bluetooth-le",
+    "offline",
+    "pdf"
+  ],
+  "license": "Apache-2.0",
+  "author": "nguyenquocanhz",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nguyenquocanhz/SoTuyenNghiaVu.git"
+  },
+  "bugs": {
+    "url": "https://github.com/nguyenquocanhz/SoTuyenNghiaVu/issues"
+  },
+  "homepage": "https://github.com/nguyenquocanhz/SoTuyenNghiaVu#readme",
+  "main": "expo-router/entry",
+  "scripts": {
+    "start": "expo start",
+    "android": "expo run:android",
+    "web": "expo start --web",
+    "test": "jest",
+    "typecheck": "tsc --noEmit",
+    "lint": "expo lint",
+    "apk": "cd android && gradlew.bat assembleRelease"
+  },
+  "dependencies": {
+    "@react-native-vector-icons/material-design-icons": "^13.1.4",
+    "expo": "~57.0.23",
+    "expo-build-properties": "~57.0.20",
+    "expo-constants": "~57.0.18",
+    "expo-document-picker": "~57.0.2",
+    "expo-file-system": "~57.0.7",
+    "expo-font": "~57.0.4",
+    "expo-haptics": "~57.0.3",
+    "expo-linking": "~57.0.10",
+    "expo-print": "~57.0.2",
+    "expo-router": "~57.0.21",
+    "expo-sharing": "~57.0.20",
+    "expo-splash-screen": "~57.0.9",
+    "expo-sqlite": "~57.0.3",
+    "expo-status-bar": "~57.0.1",
+    "expo-system-ui": "~57.0.4",
+    "react": "19.2.3",
+    "react-dom": "19.2.3",
+    "react-native": "0.86.3",
+    "react-native-ble-plx": "^3.5.1",
+    "react-native-gesture-handler": "~2.32.0",
+    "react-native-reanimated": "4.5.1",
+    "react-native-safe-area-context": "~5.7.0",
+    "react-native-screens": "~4.26.0",
+    "react-native-svg": "15.15.4",
+    "react-native-web": "~0.21.0",
+    "react-native-worklets": "0.10.1",
+    "zustand": "^5.0.15"
+  },
+  "devDependencies": {
+    "@fontsource/tinos": "^5.3.0",
+    "@types/jest": "29.5.14",
+    "@types/react": "~19.2.2",
+    "jest": "~29.7.0",
+    "jest-expo": "~57.0.5",
+    "typescript": "~6.0.3"
+  },
+  "jest": {
+    "preset": "jest-expo",
+    "testPathIgnorePatterns": [
+      "/node_modules/",
+      "/android/",
+      "/ios/"
+    ]
+  }
+}

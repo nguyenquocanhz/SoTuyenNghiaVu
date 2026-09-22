@@ -1,0 +1,30 @@
+plugins {
+  id 'com.android.library'
+  id 'expo-module-gradle-plugin'
+}
+
+group = 'expo.modules.cccdnfc'
+version = '0.1.0'
+
+android {
+  namespace "expo.modules.cccdnfc"
+  defaultConfig {
+    versionCode 1
+    versionName "0.1.0"
+  }
+  lintOptions {
+    abortOnError false
+  }
+}
+
+dependencies {
+  // ICAO 9303 eMRTD (PACE/BAC, LDS files). cert-cvc pulls bcprov-jdk15on, which duplicates jdk18on classes.
+  implementation('org.jmrtd:jmrtd:0.7.35') {
+    exclude group: 'org.bouncycastle', module: 'bcprov-jdk15on'
+  }
+  implementation('net.sf.scuba:scuba-sc-android:0.0.24') {
+    exclude group: 'org.bouncycastle', module: 'bcprov-jdk15on'
+  }
+  implementation 'org.bouncycastle:bcprov-jdk18on:1.78'
+  implementation 'org.bouncycastle:bcutil-jdk18on:1.78'
+}

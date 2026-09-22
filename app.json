@@ -1,0 +1,75 @@
+{
+  "expo": {
+    "name": "Sơ tuyển NVQS",
+    "slug": "SoTuyenNghiaVu",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/images/icon.png",
+    "scheme": "sotuyennghiavu",
+    "userInterfaceStyle": "light",
+    "ios": {
+      "bundleIdentifier": "vn.sotuyen.nghiavu",
+      "infoPlist": {
+        "NSBluetoothAlwaysUsageDescription": "Ứng dụng dùng Bluetooth để nhận số đo cân nặng từ cân điện tử khi sơ tuyển sức khỏe."
+      }
+    },
+    "android": {
+      "package": "vn.sotuyen.nghiavu",
+      "adaptiveIcon": {
+        "backgroundColor": "#E8F0E6",
+        "foregroundImage": "./assets/images/android-icon-foreground.png",
+        "backgroundImage": "./assets/images/android-icon-background.png",
+        "monochromeImage": "./assets/images/android-icon-monochrome.png"
+      },
+      "predictiveBackGestureEnabled": false
+    },
+    "web": {
+      "output": "single",
+      "favicon": "./assets/images/favicon.png"
+    },
+    "plugins": [
+      "expo-router",
+      [
+        "expo-splash-screen",
+        {
+          "backgroundColor": "#1F5130",
+          "image": "./assets/images/splash-icon.png",
+          "imageWidth": 76
+        }
+      ],
+      [
+        "react-native-ble-plx",
+        {
+          "isBackgroundEnabled": false,
+          "neverForLocation": true,
+          "bluetoothAlwaysPermission": "Ứng dụng dùng Bluetooth để nhận số đo cân nặng từ cân điện tử khi sơ tuyển sức khỏe."
+        }
+      ],
+      "expo-sqlite",
+      "@react-native-vector-icons/material-design-icons",
+      [
+        "expo-build-properties",
+        {
+          "android": {
+            "packagingOptions": {
+              "exclude": [
+                "META-INF/versions/9/OSGI-INF/MANIFEST.MF",
+                "META-INF/BCKEY.DSA",
+                "META-INF/BCKEY.SF",
+                "META-INF/INDEX.LIST"
+              ],
+              "pickFirst": [
+                "META-INF/versions/9/module-info.class"
+              ]
+            }
+          }
+        }
+      ],
+      "expo-sharing"
+    ],
+    "experiments": {
+      "typedRoutes": true,
+      "reactCompiler": true
+    }
+  }
+}
